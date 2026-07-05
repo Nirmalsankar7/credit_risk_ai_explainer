@@ -1,4 +1,4 @@
-low_risk_officer_view# Smart Loan Risk Assessment — ML + Generative AI Explainability
+# Smart Loan Risk Assessment — ML + Generative AI Explainability
 
 A credit risk prediction system that combines a traditional machine learning
 model with a large language model (Gemini) to produce clear, human-readable
@@ -213,12 +213,27 @@ use. This project treats that as future work, not a solved problem.
 
 ## Interactive demo (Streamlit)
 
-`app.py` provides a simple UI to explore the pipeline:
+`app.py` provides two ways to explore the pipeline:
 
-- Select any sample applicant from the test set
-- View their risk classification and top SHAP-driving factors
-- Toggle between "Loan Officer" and "Applicant" explanation styles
-- See the live Gemini-generated explanation
+**1. Browse sample applicants** — select any applicant from the test set,
+view their risk classification, top SHAP-driving factors, and toggle between
+"Loan Officer" and "Applicant" explanation styles.
+
+**2. Assess a new applicant** — a live form where you can enter an
+applicant's financial details (income, loan amount, employment history,
+education, etc.) and get a real-time prediction, computed on the fly with a
+live SHAP explanation and Gemini-generated summary — not replayed from saved
+data.
+
+**An honest limitation of the "new applicant" form:** the model's three
+strongest predictors (`EXT_SOURCE_1/2/3`) are external credit bureau scores,
+not something an applicant would self-report. The form exposes them as
+sliders for demonstration purposes, with a note in the UI that a real system
+would fetch these from a credit bureau API rather than asking the user
+directly. All fields not covered by the form are filled from a real
+applicant's feature vector as a template, to keep the one-hot encoded
+feature structure valid — this is a simplification appropriate for a
+portfolio demo, not something a production system would do.
 
 Run locally:
 
