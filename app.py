@@ -131,6 +131,9 @@ respond with only the explanation itself, starting directly with the first sente
             return ("⚠️ The Gemini API free-tier quota has been reached for now. "
                     "Please wait a minute and try again, or check your quota at "
                     "https://ai.google.dev/gemini-api/docs/rate-limits")
+        if "UNAVAILABLE" in str(e) or "503" in str(e):
+            return ("⚠️ Gemini's servers are experiencing high demand right now. "
+                    "This is temporary — please try again in a moment.")
         return f"⚠️ An error occurred while generating the explanation: {e}"
 
 
