@@ -1,7 +1,5 @@
 .env
 data/
-models/*.pkl
-models/*.npy
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
