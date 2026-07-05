@@ -1,5 +1,6 @@
 # Smart Loan Risk Assessment — ML + Generative AI Explainability
 
+🔗 **[Try the live demo](https://creditriskaiexplainer-njmn7zf97iwvsigytmhfxy.streamlit.app)**
 A credit risk prediction system that combines a traditional machine learning
 model with a large language model (Gemini) to produce clear, human-readable
 explanations for every prediction — tailored separately for loan officers and
